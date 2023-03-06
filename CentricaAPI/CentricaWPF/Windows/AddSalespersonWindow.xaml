@@ -1,0 +1,29 @@
+﻿<Window x:Class="CentricaWPF.Windows.AddSalespersonWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CentricaWPF.Windows"
+        mc:Ignorable="d"
+        Title="AddSalespersonWindow" Height="100" Width="300"
+        ResizeMode="NoResize">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.1*" />
+            <ColumnDefinition Width="1.5*" />
+            <ColumnDefinition Width="0.1*" />
+            <ColumnDefinition Width="1.5*" />
+            <ColumnDefinition Width="0.1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="0.1*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.2*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="0.2*" />
+        </Grid.RowDefinitions>
+        <Button Grid.Row="1" Grid.Column="1" Click="ButtonAddNew_Click">Add new</Button>
+        <Button Grid.Row="1" Grid.Column="3" Click="ButtonAddExisting_Click">Add existing</Button>
+        <Button Grid.Row="1" Grid.Column="5" Click="ButtonCancel_Click">Cancel</Button>
+    </Grid>
+</Window>

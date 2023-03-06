@@ -1,0 +1,41 @@
+﻿<Window x:Class="CentricaWPF.Windows.AddSalespersonExistingWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CentricaWPF.Windows"
+        mc:Ignorable="d"
+        Title="AddSalespersonExistingWindow" Height="425" Width="350"
+        ResizeMode="NoResize">
+    <StackPanel Margin="15">
+        <Label BorderBrush="Gray" Background="LightGray" FontWeight="Bold" FontSize="22">Available salespersons</Label>
+        <ListView Name="ListAvailableSalespersons" Height="216" Margin="0,0,0,10" >
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header = "Family name" DisplayMemberBinding = "{Binding FamilyName}" 
+                  Width = "150"/>
+                    <GridViewColumn Header = "First name" DisplayMemberBinding = "{Binding FirstName}" 
+                  Width = "150"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <CheckBox Name="CheckBoxIsPrimary" FontSize="18" Margin="0,0,0,10">Primary</CheckBox>
+        <Grid Height="50">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.1*" />
+                <ColumnDefinition Width="1.5*" />
+                <ColumnDefinition Width="0.1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="0.1*" />
+
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.2*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="0.2*" />
+            </Grid.RowDefinitions>
+            <Button Grid.Row="1" Grid.Column="1" Click="ButtonAdd_Click">Add</Button>
+            <Button Grid.Row="1" Grid.Column="3" Click="ButtonCancel_Click">Cancel</Button>
+        </Grid>
+    </StackPanel>
+</Window>

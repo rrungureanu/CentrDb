@@ -1,0 +1,56 @@
+﻿<Window x:Class="CentricaWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CentricaWPF"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="550" Width="1375"
+        ResizeMode="NoResize">
+    <Grid Margin="0,0,0,29">
+        <Label Content="Districts" FontSize="26" HorizontalAlignment="Left" Margin="39,37,0,-38"></Label>
+        <ListView HorizontalAlignment = "Left" Height = "339" Margin = "10,85,0,0" 
+         VerticalAlignment = "Top" Width = "160" Name = "ListDistricts" d:ItemsSource="{d:SampleData ItemCount=5}" SelectionChanged="ListDistricts_SelectionChanged">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header = "Name" DisplayMemberBinding = "{Binding Name}" 
+                  Width = "150"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Label Content="Stores" FontSize="26" HorizontalAlignment="Left" Margin="381,37,0,-38"></Label>
+        <ListView HorizontalAlignment = "Left" Height = "339" Margin = "677,85,0,0" 
+         VerticalAlignment = "Top" Width = "675" Name = "ListSalespersons" d:ItemsSource="{d:SampleData ItemCount=5}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header = "Family name" DisplayMemberBinding = "{Binding FamilyName}" 
+                  Width = "150"/>
+                    <GridViewColumn Header = "First name" DisplayMemberBinding = "{Binding FirstName}" 
+                  Width = "150"/>
+                    <GridViewColumn Header = "Phone" DisplayMemberBinding = "{Binding Phone}" 
+                  Width = "150"/>
+                    <GridViewColumn Header = "Email" DisplayMemberBinding = "{Binding Email}" 
+                  Width = "150"/>
+                    <GridViewColumn Header = "Primary" DisplayMemberBinding = "{Binding IsPrimary}" 
+                  Width = "50"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Label Content="Salespersons" FontSize="26" HorizontalAlignment="Left" Margin="933,37,0,-38"></Label>
+        <ListView HorizontalAlignment = "Left" Height = "339" Margin = "189,85,0,0" 
+         VerticalAlignment = "Top" Width = "465" Name = "ListStores" d:ItemsSource="{d:SampleData ItemCount=5}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header = "Name" DisplayMemberBinding = "{Binding Name}" 
+                  Width = "150"/>
+                    <GridViewColumn Header = "City" DisplayMemberBinding = "{Binding City}" 
+                  Width = "150"/>
+                    <GridViewColumn Header = "Phone" DisplayMemberBinding = "{Binding Phone}" 
+                  Width = "150"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Height="40" Content="Add salesperson" Click="Button_AddSalespersonClick" Margin="786,435,0,0"></Button>
+        <Button FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Height="40" Content="Remove salesperson" Click="ButtonRemoveSalesperson_Click" Margin="1036,435,0,0"></Button>
+    </Grid>
+</Window>
